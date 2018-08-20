@@ -7,7 +7,8 @@ git status
 git diff readme.txt （diff只是比较工作区和暂存区的文件）
 git log
 git log --pretty=oneline
-git reset --hard HEAD^  （reset把暂存区的文件取消暂存，工作区的文件不会有任何变化）
+git reset --hard HEAD^  （回退到上一次提交的版本，同时也会覆盖工作区文件）
+git reset HEAD filename （reset把暂存区的文件取消暂存，工作区的文件不会有任何变化）
 git reflog 
 git checkout -- readme.txt  （checkout是把版本库或暂存区的文件覆盖到工作区，并不会把版本库的文件覆盖到暂存区）
 git rm （删除版本库里的文件，提交后生效，提交前还可以git reset HEAD filename恢复）
