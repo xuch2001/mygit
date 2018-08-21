@@ -16,3 +16,9 @@ git remote add origin git@server-name.com:path/repo-name.git （关联一个远�
 git push -u origin master （第一次推送master分支的所有内容）
 git push origin master （之后每次推送）
 git clone git@server-name:path/repo-name.git （从远程仓库克隆到本地）
+git checkout -b dev （git checkout 命令加上 -b 参数表示创建并切换，相当于以下的两条命令：
+git branch dev （创建dev分支）
+git branch -d dev （删除dev分支）
+git checkout dev (切换到dev分支）
+git branch （查看当前分支，当前的分支前面会有个*号）
+git merge dev （合并指定分支到当前分支，当前分支是master，把dev分支合并到master）
