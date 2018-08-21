@@ -15,3 +15,4 @@ git rm （删除版本库里的文件，提交后生效，提交前还可以git 
 git remote add origin git@server-name.com:path/repo-name.git （关联一个远程库）
 git push -u origin master （第一次推送master分支的所有内容）
 git push origin master （之后每次推送）
+git clone git@server-name:path/repo-name.git （从远程仓库克隆到本地）
