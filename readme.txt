@@ -3,4 +3,4 @@ Git is free software distributed under the GPL.
 Git has a mutable index called stage.
 Git tracks changes of files.
 dev in readme.txt file.
-bug in readme file.
+bug in readme.txt file.
