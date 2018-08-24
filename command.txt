@@ -18,7 +18,6 @@ git push origin master （之后每次推送）
 git clone git@server-name:path/repo-name.git （从远程仓库克隆到本地）
 git remote  （查看远程库）
 git remote -v （查看远程库更详细信息）
-
 git checkout -b dev （git checkout 命令加上 -b 参数表示创建并切换，相当于以下的两条命令：
 git branch dev （创建dev分支）
 git branch -d dev （删除dev分支）
