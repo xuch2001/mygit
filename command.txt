@@ -12,12 +12,23 @@ git reset HEAD filename （reset把暂存区的文件取消暂存，或者是用
 git reflog 
 git checkout -- readme.txt  （checkout是把版本库或暂存区的文件覆盖到工作区，并不会把版本库的文件覆盖到暂存区）
 git rm （删除版本库里的文件，提交后生效，提交前还可以git reset HEAD filename恢复）
+
+git remote  （查看远程库）
+git remote -v （查看远程库更详细信息）
 git remote add origin git@server-name.com:path/repo-name.git （关联一个远程库）
 git push -u origin master （第一次推送master分支的所有内容）
 git push origin master （之后每次推送）
+git push origin dev （推送其它分支）
 git clone git@server-name:path/repo-name.git （从远程仓库克隆到本地）
-git remote  （查看远程库）
-git remote -v （查看远程库更详细信息）
+git branch dev origin/dev （克隆远程仓库后，只能看到master主分支，并不能见到其它分支，该命令创建远程origin的dev分支到本地）
+git pull （把最新的提交从远程当前分支更新下来）
+git branch --set-upstream-to=origin/dev dev （指定本地dev分支与远程origin/dev分支的链接）
+git branch -a （查看所有分支，包括本地和远程）
+git branch -r （查看远程分支）
+git branch -r -d origin/dev （删除远程分支dev，可和下一条命令结合使用）
+git push origin :dev （删除远程分支，可与上一条命令结合使用）
+git push origin --delete dev （删除远程分支dev）
+
 git checkout -b dev （git checkout 命令加上 -b 参数表示创建并切换，相当于以下的两条命令：
 git branch dev （创建dev分支）
 git branch -d dev （删除dev分支）
@@ -34,3 +45,5 @@ git stash list （查看隐藏列表）
 git stash apply stash@{1} （恢复隐藏的内容到工作区和暂存区，该命令不会删除隐藏的内容）
 git stash drop stash@{1} （删除隐藏的内容）
 git stash pop （恢复隐藏的内容到工作区和暂存区，同时删除隐藏的内容。PS：很奇怪，亲自测试下来，原来在暂存区的文件恢复后也到了工作区，和教程上不一样。）
+
+git rebase （rebase操作可以把本地未push的分叉提交历史整理成直线）
