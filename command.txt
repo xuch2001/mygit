@@ -1,6 +1,9 @@
 git config --global user.name "xuch2001"
 git config --global user.email "xuch2001@163.com"
 git init
+
+ssh-keygen -t rsa -C "xuch2001@163.com" （创建SSH KEY，生成后在用户主目录下的.ssh目录，id_rsa和id_rsa.pub）
+
 git add readme.txt
 git commit -m "wrote a readme file"
 git status
@@ -47,3 +50,13 @@ git stash drop stash@{1} （删除隐藏的内容）
 git stash pop （恢复隐藏的内容到工作区和暂存区，同时删除隐藏的内容。PS：很奇怪，亲自测试下来，原来在暂存区的文件恢复后也到了工作区，和教程上不一样。）
 
 git rebase （rebase操作可以把本地未push的分叉提交历史整理成直线）
+
+git tag （查看标签）
+git tag v1.0 （给当前分支的当前commit打上v1.0的标签）
+git tag v1.1 5fdckd （给当前分支上commitID为5fdckd的commit打上标签v1.1）
+git show v1.1 （查看标签为v1.1的标签信息）
+git tag -a v1.2 -m "comment" 5fdckd （-a指定标签名称，-m指定说明文字，5fdckd为commitID）
+git tag -d v1.1 （删除v1.1标签）
+git push origin v1.1 （推送v1.1标签到远程）
+git push origin --tags （一次性推送所有还未推送到远程的本地标签）
+git push origin "refs/tags/v1.1 （删除远程标签，注意：要先删除本地标签，用git tag -d <tagname>）
