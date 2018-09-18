@@ -43,7 +43,7 @@ git merge dev （合并指定分支到当前分支，当前分支是master，把
 git log --graph （看分支合并图）
 git log --graph --pretty=oneline --abbrev-commit
 git merge --no-ff -m "comment for commit" dev （禁用Fast Forward模式合并，合并同时会做一次commit，所以加上-m参数，
-                                                 普通模式合并后会留有分支信息，而Fast Forward模式合并后分支信息会丢失）
+                                                普通模式合并后会留有分支信息，而Fast Forward模式合并后分支信息会丢失）
 git stash （隐藏当前工作现场，包括工作区，暂存区，可多次隐藏）
 git stash list （查看隐藏列表）
 git stash apply stash@{1} （恢复隐藏的内容到工作区和暂存区，该命令不会删除隐藏的内容）
