@@ -31,6 +31,7 @@ git branch -r （查看远程分支）
 git branch -r -d origin/dev （删除远程分支dev，可和下一条命令结合使用）
 git push origin :dev （删除远程分支，可与上一条命令结合使用）
 git push origin --delete dev （删除远程分支dev）
+git fetch origin master （获取远程master分支的所有更新）
 
 git checkout -b dev （git checkout 命令加上 -b 参数表示创建并切换，相当于以下的两条命令：
 git branch dev （创建dev分支）
