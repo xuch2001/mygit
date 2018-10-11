@@ -18,19 +18,33 @@ git rm （删除版本库里的文件，提交后生效，提交前还可以git 
 
 git remote  （查看远程库）
 git remote -v （查看远程库更详细信息）
+git remote show orgin （查看origin主机仓库的详细信息）
 git remote add origin git@server-name.com:path/repo-name.git （关联一个远程库）
+git remote rm origin （删除远程库origin）
+
 git push -u origin master （第一次推送master分支的所有内容）
 git push origin master （之后每次推送）
-git push origin dev （推送其它分支，如果远程没有该分支，则会建立）
+git push origin dev （推送其它本地分支dev，如果远程没有该分支，则自动新建，远程名称也为dev）
+git push origin dev1:dev2 (推送本地分支dev1到远程的dev2分支，若远程没有dev2分支，则自动新建）
+
 git clone git@server-name:path/repo-name.git （从远程仓库克隆到本地）
+git clone -o localname git@server-name:path/repo-name.git （从远处仓库克隆到本地，并制定本地仓库名字为localname）
 git branch dev origin/dev （克隆远程仓库后，只能看到master主分支，并不能见到其它分支，该命令创建远程origin的dev分支到本地）
+
 git pull （把最新的提交从远程当前分支更新下来）
+git pull origin dev:dev （取远程分支dev并且合并本地分支dev上，若本地无dev分支，则自动新建）
+
 git branch --set-upstream-to=origin/dev dev （指定本地dev分支与远程origin/dev分支的链接）
 git branch -a （查看所有分支，包括本地和远程）
 git branch -r （查看远程分支）
 git branch -r -d origin/dev （删除远程分支dev，可和下一条命令结合使用）
-git push origin :dev （删除远程分支，可与上一条命令结合使用）
-git push origin --delete dev （删除远程分支dev）
+git push origin :dev （删除远程分支，可与上一条命令结合使用。注：本地分支不会被删除）
+git push origin --delete dev （删除远程分支dev。注：本地分支不会被删除）
+git push -u origin master (指定master默认主机为origin）
+git push -all origin （推送所有分支到主机origin）
+git push --force origin （强制推送）
+
+
 git fetch origin master （获取远程master分支的所有更新）
 git diff master origin/master （比较本地master分支与远程master分支，和上一条命令结合使用，先取得远程master分支的最新信息）
 git log mater..origin/master （显示远程有 而本地没有的 commit信息）
